@@ -16,12 +16,12 @@ const useCountriesByRegion = () => {
 
 
   useEffect(() => {
-    if (region === "all") {
-      dispatch(getCountriesAction());
-    } else {
+    if (region !== "all") {
       dispatch(getCountriesByRegionAction(region));
+    } else {
+      dispatch(getCountriesAction());
     }
-  }, [region]);
+  }, [region,dispatch]);
     return  {   
         region,handleChange
     }

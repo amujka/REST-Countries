@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getCountriesByNameAction } from "../../store/actions/countriesActions";
+
+import {
+  getCountriesAction,
+  getCountriesByNameAction,
+} from "../../store/actions/countriesActions";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -9,8 +13,10 @@ const SearchBar = () => {
   useEffect(() => {
     if (search !== "") {
       dispatch(getCountriesByNameAction(search));
+    } else {
+      dispatch(getCountriesAction());
     }
-  }, [search]);
+  }, [search, dispatch]);
   return (
     <div>
       <input
