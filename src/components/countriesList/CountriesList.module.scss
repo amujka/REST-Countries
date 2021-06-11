@@ -1,9 +1,7 @@
 @import'../../scss/main.scss';
-.CountriesList{
-    width: 100%;
-    max-width: 1366px;
-    margin: 0 auto;
-    padding: 1rem;
+
+
+   
     .inputWrapper{
         display: flex;
         justify-content: space-between;
@@ -26,4 +24,6 @@
             gap:5rem;
       }
     }
-}
+    .loading{
+      text-align: center;
+    }

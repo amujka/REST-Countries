@@ -1,0 +1,21 @@
+@import'../../scss/main.scss';
+.CountryDetails{ img {
+     width: 100%;
+     object-fit: cover;
+
+     @include mobile {
+         height: 15rem;
+     }
+
+     @include bigTablet {
+         height: 10rem;
+     }
+ }
+
+ .countryInfo {
+     padding: 0 10px 10px 0px;
+
+     span {
+         font-weight: bold;
+     }
+ }}

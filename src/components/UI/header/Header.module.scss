@@ -1,4 +1,10 @@
+@import'../../../scss/main.scss';
 .Header{
     background-color: #fff;
-    padding:1rem 5rem;
+    padding:1rem ;
+    text-align: center;
+    @include tablet{
+
+        text-align: left;
+    }
 }

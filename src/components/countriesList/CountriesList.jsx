@@ -8,19 +8,23 @@ const CountriesList = () => {
   const countries = useSelector((state) => {
     return state.countries;
   });
-  console.log(countries);
+  //console.log(countries);
 
   return (
-    <div className={classes.CountriesList}>
+    <div className={classes.container}>
       <div className={classes.inputWrapper}>
         <SearchBar />
         <SelectInput />
       </div>
-      <ul>
-        {countries.map((country) => (
-          <Country key={country.alpha3Code} country={country} />
-        ))}
-      </ul>
+      {countries.length > 0 ? (
+        <ul>
+          {countries.map((country) => (
+            <Country key={country.alpha3Code} country={country} />
+          ))}
+        </ul>
+      ) : (
+        <h1 className={classes.loading}>Loading...</h1>
+      )}
     </div>
   );
 };
