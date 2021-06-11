@@ -1,12 +1,21 @@
 @import'../../../scss/main.scss';
 li{
-    background-color: $VeryLightGray;
-
-    border-radius: 10px 10px 0 0;
+    //background-color: $DarkGray;
     overflow: hidden;
     img{
-        object-fit: cover;
-        width: 100%;
-        height: auto;
+           width: 100%;
+           object-fit: cover;
+           @include mobile{
+               height: 15rem;
+           }
+           @include bigTablet {
+               height: 10rem;
+           }
+    }
+    .countryInfo{
+      padding:0 10px 10px 0px;
+        span{
+            font-weight: bold;
+        }
     }
 }

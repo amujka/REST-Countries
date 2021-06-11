@@ -4,12 +4,22 @@ const Country = ({ country }) => {
   return (
     <li className={classes.Country}>
       <img src={country.flag} alt="" />
-      <h3>{country.name}</h3>
-      <p>{country.capital}</p>
-      <p>{country.population}</p>
-      <small>{country.region}</small>
+      <div className={classes.countryInfo}>
+        <h3>{country.name}</h3>
+        <p>
+          <span>Capital: </span>
+          {country.capital}
+        </p>
+        <p>
+          <span>Population: </span>
+          {country.population}
+        </p>
+        <small>
+          <span>Region: </span>
+          {country.region}
+        </small>
+      </div>
     </li>
   );
 };
-
 export default Country;

@@ -1,8 +1,29 @@
 @import'../../scss/main.scss';
-
-ul{
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(4,3fr);
-    gap: 1rem;
+.CountriesList{
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 1rem;
+    .inputWrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0;
+    }
+    ul{
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(1,12fr);
+        gap:1rem;
+      @include tablet {
+         grid-template-columns: repeat(2,6fr);
+      }
+        @include bigTablet {
+            grid-template-columns: repeat(3, 4fr);
+        }
+      @include laptop {
+          grid-template-columns: repeat(4, 3fr);
+            gap:5rem;
+      }
+    }
 }

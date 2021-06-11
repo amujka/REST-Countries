@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-
+import classes from "./SearchBar.module.scss";
 import {
   getCountriesAction,
   getCountriesByNameAction,
@@ -18,14 +18,15 @@ const SearchBar = () => {
     }
   }, [search, dispatch]);
   return (
-    <div>
+    <>
       <input
+        className={classes.SearchBar}
         type="text"
         placeholder="Search by name"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-    </div>
+    </>
   );
 };
 
