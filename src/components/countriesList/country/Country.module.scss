@@ -1,13 +1,10 @@
 @import'../../../scss/main.scss';
 .Country {
-    //background-color: $DarkGray;
+    position: relative;
     overflow: hidden;
-
-  a {
-     
    
+  a {
           text-decoration: none;
-    
       img{
            width: 100%;
            object-fit: cover;
@@ -19,9 +16,23 @@
            }
     }
     .countryInfo{
-     
         span{
             font-weight: bold;
         }
-    }}
+    }
+    }
+   &::after{
+       content: "";
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       width: 0%;
+      height: 2px;
+      background-color: $DarkBlue;
+       transition:width .3s ease-in;
+   }
+   &:hover {
+        &::after {
+       width: 100%;}
+   }
 }

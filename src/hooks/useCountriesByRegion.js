@@ -16,7 +16,7 @@ const useCountriesByRegion = () => {
     } else {
       dispatch(getCountriesAction());
     }
-  }, [region,dispatch]);
+  }, [region]);
     return  {   
         region,handleChange
     }

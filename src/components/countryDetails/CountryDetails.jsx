@@ -2,18 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { useParams, NavLink, useHistory } from "react-router-dom";
+
 import classes from "./CountryDetails.module.scss";
 
 const CountryDetails = () => {
   let { name } = useParams();
-  let history = useHistory();
+  const history = useHistory();
 
-  const country = useSelector((state) => {
+  let country = useSelector((state) => {
     return state.countries.find((country) => country.alpha3Code === name);
   });
-  if (country === undefined) {
-    history.replace("/");
-  }
+
   console.log(country);
   return (
     <div className={classes.CountryDetails}>

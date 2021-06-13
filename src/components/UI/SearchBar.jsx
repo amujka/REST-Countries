@@ -16,7 +16,8 @@ const SearchBar = () => {
     } else {
       dispatch(getCountriesAction());
     }
-  }, [search, dispatch]);
+  }, [search]);
+
   return (
     <>
       <input
