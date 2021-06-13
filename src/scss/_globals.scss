@@ -16,10 +16,15 @@ body {
     margin: 0;
     padding: 0;
   background-color: $VeryLightGray;
+  color: $DarkBlue;
 }
 .container {
     width: 100%;
     max-width: 1366px;
     margin: 0 auto;
     padding: 0 1rem ;
+}
+a{
+    color: $DarkBlue;
+    text-decoration: none;
 }

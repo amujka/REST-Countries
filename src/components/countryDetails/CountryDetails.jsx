@@ -1,28 +1,28 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { useParams, NavLink, useHistory, useLocation } from "react-router-dom";
+import { useParams, NavLink, useHistory } from "react-router-dom";
 import classes from "./CountryDetails.module.scss";
 
 const CountryDetails = () => {
   let { name } = useParams();
   let history = useHistory();
-  let location = useLocation();
+
   const country = useSelector((state) => {
     return state.countries.find((country) => country.alpha3Code === name);
   });
   if (country === undefined) {
     history.replace("/");
   }
-  console.log({ country });
-  console.log({ history });
-  console.log({ location });
-
+  console.log(country);
   return (
     <div className={classes.CountryDetails}>
-      <img src={country.flag} alt="" />
+      <div className={classes.imgWrapper}>
+        <img src={country.flag} />
+      </div>
+
       <div className={classes.countryInfo}>
-        <h3>{country.name}</h3>
+        <h2>{country.name}</h2>
         <p>
           <span>Native name:</span>
           {country.nativeName}
@@ -43,16 +43,7 @@ const CountryDetails = () => {
           <span>Region: </span>
           {country.subregion}
         </p>
-        <ul>
-          {country.borders.map((border) => {
-            return (
-              <li key={border}>
-                <NavLink to={`/country-details/${border}`}>{border}</NavLink>
-              </li>
-            );
-          })}
-        </ul>
-        <ul>
+        <ul className={classes.currencyList}>
           {country.currencies.map((currency) => {
             return (
               <li key={currency.code}>
@@ -62,8 +53,20 @@ const CountryDetails = () => {
           })}
         </ul>
         <p>
-          <span>Calling code:</span>+ {country.callingCodes[0]}
+          <span>Calling code:</span> +{country.callingCodes[0]}
         </p>
+        <p>
+          <span>Border countries:</span>
+        </p>
+        <ul className={classes.neighboursList}>
+          {country.borders.map((border) => {
+            return (
+              <li key={border}>
+                <NavLink to={`/country-details/${border}`}>{border}</NavLink>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );

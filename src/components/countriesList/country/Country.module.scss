@@ -1,8 +1,14 @@
 @import'../../../scss/main.scss';
-li{
+.Country {
     //background-color: $DarkGray;
     overflow: hidden;
-    img{
+
+  a {
+     
+   
+          text-decoration: none;
+    
+      img{
            width: 100%;
            object-fit: cover;
            @include mobile{
@@ -13,9 +19,9 @@ li{
            }
     }
     .countryInfo{
-      padding:0 10px 10px 0px;
+     
         span{
             font-weight: bold;
         }
-    }
+    }}
 }

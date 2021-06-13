@@ -9,7 +9,6 @@ import {BrowserRouter as Router,
   Route,
   Redirect,} from 'react-router-dom'
 import CountryDetails from './components/countryDetails/CountryDetails'
-
 const App = () => {
         const dispatch = useDispatch()
     useEffect(() => {
@@ -17,24 +16,21 @@ const App = () => {
     }, [dispatch])
     return (
         <Router>
-        <div className="App">
-        <Header/>
-        <Switch>
-        <Route path="/" exact>
-          <CountriesList/>
-        </Route>    
-         <Route path="/country-details/:name" >
-           <CountryDetails/>
-        </Route> 
-        <Route path="*" >
-          <Redirect to="/"/>
-        </Route>
-       
-        </Switch>
-        </div>
-
+          <div className="App">
+            <Header/>
+            <Switch>
+              <Route path="/" exact>
+                <CountriesList/>
+              </Route>    
+              <Route path="/country-details/:name" >
+                <CountryDetails/>
+              </Route> 
+              <Route path="*" >
+                <Redirect to="/"/>
+              </Route>
+            </Switch>
+          </div>
         </Router>
     )
 }
-
 export default App
